@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'DevKit_Example' do
+  pod 'DevKit', :path => '../'
+
+  target 'DevKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
