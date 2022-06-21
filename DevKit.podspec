@@ -10,27 +10,45 @@ Pod::Spec.new do |s|
   s.name             = 'DevKit'
   s.version          = '0.1.0'
   s.summary          = 'A short description of DevKit.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/sephilex@gmail.com/DevKit'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/sephilex/DevKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'sephilex@gmail.com' => 'sephilex@gmail.com' }
-  s.source           = { :git => 'https://github.com/sephilex@gmail.com/DevKit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'sephilex' => 'sephilex@gmail.com' }
+  s.source           = { :git => 'https://github.com/sephilex/DevKit.git', :tag => s.version.to_s }
+  s.ios.deployment_target = '14.0'
+  s.default_subspec    = 'Full'
+  # s.source_files = 'DevKit/Classes/**/*'
 
-  s.ios.deployment_target = '9.0'
+  s.subspec 'CommonError' do |ss|
+    ss.source_files   = "Sources/DevKit/CommonError/**/*.{swift}"
+    ss.dependency 'Moya'
+    ss.dependency 'SwifterSwift'
+  end
 
-  s.source_files = 'DevKit/Classes/**/*'
+  s.subspec 'Networking' do |ss|
+    ss.source_files   = "Sources/DevKit/Networking/**/*.{swift}"
+    ss.dependency 'Moya'
+    ss.dependency 'RxSwift'
+    ss.dependency 'Toaster'
+    ss.dependency 'DevKit/CommonError'
+    ss.dependency 'DevKit/Core'
+  end
+
+  s.subspec 'Core' do |ss|
+    ss.source_files   = "Sources/DevKit/Core/**/*.{swift}"
+    ss.dependency 'RxSwift'
+    ss.dependency 'RxCocoa'
+    ss.dependency 'RxDataSources'
+    ss.dependency 'Kingfisher'
+    ss.dependency 'TinyConstraints'
+    ss.dependency 'Then'
+    ss.dependency 'NSObject+Rx'
+  end
+
+  s.subspec 'Full' do |full|
+    full.dependency 'DevKit/CommonError'
+    full.dependency 'DevKit/Networking'
+    full.dependency 'DevKit/Core'
+  end
   
   # s.resource_bundles = {
   #   'DevKit' => ['DevKit/Assets/*.png']
