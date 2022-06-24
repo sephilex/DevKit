@@ -52,7 +52,6 @@ Pod::Spec.new do |s|
     full.dependency 'DevKit/CommonError'
     full.dependency 'DevKit/Networking'
     full.dependency 'DevKit/Core'
-    full.dependency 'DevKit/TestPod'
   end
   
   # s.resource_bundles = {
