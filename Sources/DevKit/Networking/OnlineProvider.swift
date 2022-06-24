@@ -46,13 +46,10 @@ public class OnlineProvider<Target> where Target: Moya.TargetType {
     /// 带网络监测的请求，断线重连
     func request(_ token: Target, retryCount: Int = 1) -> Single<Moya.Response> {
         let actualRequest = moyaProvider.rx.request(token)
-        return online.ignore(value: false).take(1)
+        return online.ignore(false).take(1)
             .flatMap { _ in
-                actualRequest.retry(1).catch { error in
-                    Single<Moya.Response>.error(error.asCommonError)
-                }
+                actualRequest.retry(retryCount)
             }.asSingle()
-        
     }
 }
 

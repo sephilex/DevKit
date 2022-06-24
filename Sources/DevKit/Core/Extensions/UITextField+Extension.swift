@@ -16,22 +16,21 @@ import NSObject_Rx
 
 extension UITextField {
 
+    func addPaddingRight(_ padding: CGFloat) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: frame.height))
+        rightView = paddingView
+        rightViewMode = .always
+    }
 
-	public func setLeftPadding(value: Int) {
-
-		self.leftView = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: value, height: value)))
-		self.leftViewMode = .always
-	}
-
-
-    public func setRightPadding(value: Int) {
-
-		self.rightView = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: value, height: value)))
-		self.rightViewMode = .always
-	}
+    func addPaddingRightIcon(_ image: UIImage, padding: CGFloat) {
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .center
+        rightView = imageView
+        rightView?.frame.size = CGSize(width: image.size.width + padding, height: image.size.height)
+        rightViewMode = .always
+    }
     
     public func addInputView() {
-        
         let endEditButton = UIButton(type: .system).then { button in
             let config = UIImage.SymbolConfiguration(pointSize: 24)
             let image = UIImage(systemName: "keyboard.chevron.compact.down", withConfiguration: config)?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)

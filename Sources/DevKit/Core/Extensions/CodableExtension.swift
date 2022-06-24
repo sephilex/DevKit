@@ -8,6 +8,7 @@
 import Foundation
 
 
+/// 枚举类型Codable扩展，不存在类型时默认赋值最后一个枚举
 protocol CaseIterableDefaultsLast: Encodable & Decodable & CaseIterable & RawRepresentable where RawValue: Decodable, AllCases: BidirectionalCollection {}
 
 extension CaseIterableDefaultsLast {

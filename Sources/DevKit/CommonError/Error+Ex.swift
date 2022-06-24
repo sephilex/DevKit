@@ -36,7 +36,7 @@ extension MoyaError: CommonErrorCompatible {
         case let .underlying(error, _):
             return (error as CommonErrorCompatible).commonError
         case let .statusCode(response):
-            return .error(0, response.data.string(encoding: .utf8))
+            return .error(response.statusCode, response.data.string(encoding: .utf8))
         case let .objectMapping(error, _):
             return .error(0, error.localizedDescription)
         default:

@@ -2,21 +2,93 @@
   "name": "DevKit",
   "version": "0.1.0",
   "summary": "A short description of DevKit.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/sephilex@gmail.com/DevKit",
+  "homepage": "https://github.com/sephilex/DevKit",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "sephilex@gmail.com": "sephilex@gmail.com"
+    "sephilex": "sephilex@gmail.com"
   },
   "source": {
-    "git": "https://github.com/sephilex@gmail.com/DevKit.git",
+    "git": "https://github.com/sephilex/DevKit.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "14.0"
   },
-  "source_files": "DevKit/Classes/**/*"
+  "default_subspecs": "Full",
+  "subspecs": [
+    {
+      "name": "CommonError",
+      "source_files": "Sources/DevKit/CommonError/**/*.{swift}",
+      "dependencies": {
+        "Moya": [
+
+        ],
+        "SwifterSwift": [
+
+        ]
+      }
+    },
+    {
+      "name": "Networking",
+      "source_files": "Sources/DevKit/Networking/**/*.{swift}",
+      "dependencies": {
+        "Moya": [
+
+        ],
+        "Toaster": [
+
+        ],
+        "DevKit/CommonError": [
+
+        ],
+        "DevKit/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "Core",
+      "source_files": "Sources/DevKit/Core/**/*.{swift}",
+      "dependencies": {
+        "RxSwift": [
+
+        ],
+        "RxCocoa": [
+
+        ],
+        "NSObject+Rx": [
+
+        ],
+        "RxDataSources": [
+
+        ],
+        "Kingfisher": [
+
+        ],
+        "TinyConstraints": [
+
+        ],
+        "Then": [
+
+        ]
+      }
+    },
+    {
+      "name": "Full",
+      "dependencies": {
+        "DevKit/CommonError": [
+
+        ],
+        "DevKit/Networking": [
+
+        ],
+        "DevKit/Core": [
+
+        ]
+      }
+    }
+  ]
 }

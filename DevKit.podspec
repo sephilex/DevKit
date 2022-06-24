@@ -24,10 +24,13 @@ Pod::Spec.new do |s|
     ss.dependency 'SwifterSwift'
   end
 
+  s.subspec 'TestPod' do |ss|
+    ss.source_files   = "Sources/DevKit/TestPod/**/*.{swift}"
+  end
+
   s.subspec 'Networking' do |ss|
     ss.source_files   = "Sources/DevKit/Networking/**/*.{swift}"
     ss.dependency 'Moya'
-    ss.dependency 'RxSwift'
     ss.dependency 'Toaster'
     ss.dependency 'DevKit/CommonError'
     ss.dependency 'DevKit/Core'
@@ -37,17 +40,19 @@ Pod::Spec.new do |s|
     ss.source_files   = "Sources/DevKit/Core/**/*.{swift}"
     ss.dependency 'RxSwift'
     ss.dependency 'RxCocoa'
+    ss.dependency 'RxSwiftExt'
+    ss.dependency 'NSObject+Rx'
     ss.dependency 'RxDataSources'
     ss.dependency 'Kingfisher'
     ss.dependency 'TinyConstraints'
     ss.dependency 'Then'
-    ss.dependency 'NSObject+Rx'
   end
 
   s.subspec 'Full' do |full|
     full.dependency 'DevKit/CommonError'
     full.dependency 'DevKit/Networking'
     full.dependency 'DevKit/Core'
+    full.dependency 'DevKit/TestPod'
   end
   
   # s.resource_bundles = {
