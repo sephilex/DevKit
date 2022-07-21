@@ -14,9 +14,10 @@ extension Error {
     public var asCommonError: CommonError {
         if let ae = self as? CommonError {
             return ae
-        }else {
-            let compatible = self as CommonErrorCompatible
+        }else if let compatible = self as? CommonErrorCompatible {
             return compatible.commonError
+        }else {
+            return .error(0, self.localizedDescription)
         }
     }
 }
@@ -34,7 +35,7 @@ extension MoyaError: CommonErrorCompatible {
     public var commonError: CommonError {
         switch self {
         case let .underlying(error, _):
-            return (error as CommonErrorCompatible).commonError
+            return (error as? CommonErrorCompatible)?.commonError ?? .error(0, error.localizedDescription)
         case let .statusCode(response):
             return .error(response.statusCode, response.data.string(encoding: .utf8))
         case let .objectMapping(error, _):
@@ -45,8 +46,8 @@ extension MoyaError: CommonErrorCompatible {
     }
 }
 
-extension NSError: CommonErrorCompatible {
-    public var commonError: CommonError {
-        return .error(0, self.localizedDescription)
-    }
-}
+//extension NSError: CommonErrorCompatible {
+//    public var commonError: CommonError {
+//        return .error(0, self.localizedDescription)
+//    }
+//}

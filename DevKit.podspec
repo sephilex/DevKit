@@ -48,10 +48,17 @@ Pod::Spec.new do |s|
     ss.dependency 'Then'
   end
 
-  s.subspec 'Full' do |full|
-    full.dependency 'DevKit/CommonError'
-    full.dependency 'DevKit/Networking'
-    full.dependency 'DevKit/Core'
+  s.subspec 'Full' do |ss|
+    ss.dependency 'DevKit/CommonError'
+    ss.dependency 'DevKit/Networking'
+    ss.dependency 'DevKit/Core'
+  end
+
+  s.subspec 'Debug' do |ss|
+    ss.dependency 'DevKit/CommonError'
+    ss.dependency 'DevKit/Networking'
+    ss.dependency 'DevKit/Core'
+    ss.dependency 'DevKit/TestPod'
   end
   
   # s.resource_bundles = {

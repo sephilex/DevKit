@@ -34,10 +34,6 @@ public extension UIApplication {
         return ""
     }
     
-    var urlScheme: String {
-        self.urlScheme(name: "app") ?? ""
-    }
-    
     var name: String {
         self.displayName ?? self.bundleName
     }
@@ -56,32 +52,36 @@ public extension UIApplication {
         return UIImage(named: name)
     }
     
-    @objc var pageStart: Int { 1 }
+//    var urlScheme: String {
+//        self.urlScheme(name: "app") ?? ""
+//    }
     
-    @objc var pageSize: Int { 20 }
+//    @objc var pageStart: Int { 1 }
+//
+//    @objc var pageSize: Int { 20 }
     
-    @objc var baseApiUrl: String {
-        return "https://\(self.urlScheme).com"
-    }
+//    @objc var baseApiUrl: String {
+//        return "https://\(self.urlScheme).com"
+//    }
+//
+//    @objc var baseWebUrl: String {
+//        return "https://\(self.urlScheme).com"
+//    }
     
-    @objc var baseWebUrl: String {
-        return "https://\(self.urlScheme).com"
-    }
-    
-    func urlScheme(name: String) -> String? {
-        var scheme: String? = nil
-        if let types = Bundle.main.infoDictionary?["CFBundleURLTypes"] as? Array<Dictionary<String, Any>> {
-            for info in types {
-                if let urlName = info["CFBundleURLName"] as? String,
-                   urlName == name {
-                    if let urlSchemes = info["CFBundleURLSchemes"] as? [String] {
-                        scheme = urlSchemes.first
-                    }
-                }
-            }
-        }
-        return scheme
-    }
+//    func urlScheme(name: String) -> String? {
+//        var scheme: String? = nil
+//        if let types = Bundle.main.infoDictionary?["CFBundleURLTypes"] as? Array<Dictionary<String, Any>> {
+//            for info in types {
+//                if let urlName = info["CFBundleURLName"] as? String,
+//                   urlName == name {
+//                    if let urlSchemes = info["CFBundleURLSchemes"] as? [String] {
+//                        scheme = urlSchemes.first
+//                    }
+//                }
+//            }
+//        }
+//        return scheme
+//    }
 
 }
 

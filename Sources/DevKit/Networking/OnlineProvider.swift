@@ -44,7 +44,7 @@ public class OnlineProvider<Target> where Target: Moya.TargetType {
                                      trackInflights: trackInflights)
     }
     /// 带网络监测的请求，断线重连
-    func request(_ token: Target, retryCount: Int = 1) -> Single<Moya.Response> {
+    public func request(_ token: Target, retryCount: Int = 1) -> Single<Moya.Response> {
         let actualRequest = moyaProvider.rx.request(token)
         return online.ignore(false).take(1)
             .flatMap { _ in

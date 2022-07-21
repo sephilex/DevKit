@@ -8,10 +8,9 @@
 import RxSwift
 import RxCocoa
 
-
 extension PrimitiveSequence where Trait == SingleTrait {
     
-    func mapToVoid() -> Single<Void> {
+    public func mapToVoid() -> Single<Void> {
         return map { _ in }
     }
 }

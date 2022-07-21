@@ -11,8 +11,8 @@ public protocol CommonErrorCompatible: Error {
     var commonError: CommonError { get }
 }
 
-extension CommonErrorCompatible {
-    public var commonError: CommonError {
-        .error(0, nil)
-    }
-}
+//extension CommonErrorCompatible {
+//    public var commonError: CommonError {
+//        .error(0, nil)
+//    }
+//}
