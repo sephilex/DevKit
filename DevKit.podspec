@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
     ss.dependency 'RxSwiftExt'
     ss.dependency 'NSObject+Rx'
     ss.dependency 'RxDataSources'
-    ss.dependency 'Kingfisher'
+    ss.dependency 'Kingfisher', '~> 7.0'
     ss.dependency 'TinyConstraints'
     ss.dependency 'Then'
   end
