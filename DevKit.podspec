@@ -31,6 +31,7 @@ Pod::Spec.new do |s|
   s.subspec 'Networking' do |ss|
     ss.source_files   = "Sources/DevKit/Networking/**/*.{swift}"
     ss.dependency 'Moya'
+    ss.dependency 'Moya/RxSwift'
     ss.dependency 'Toaster'
     ss.dependency 'DevKit/CommonError'
     ss.dependency 'DevKit/Core'
