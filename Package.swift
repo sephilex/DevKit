@@ -6,7 +6,8 @@ let package = Package(
     platforms: [ .iOS(.v14)],
     products: [
       .library(name: "Core", targets: ["Core"]),
-      .library(name: "CommonError", targets: ["CommonError"])
+      .library(name: "CommonError", targets: ["CommonError"]),
+      .library(name: "Networking", targets: ["Networking"])
     ],
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
@@ -25,10 +26,10 @@ let package = Package(
             name: "Core", 
             dependencies: ["RxSwift", "NSObject-Rx", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift", "RxDataSources", "RxSwiftExt"]
         ),
-        // .target(
-        //     name: "Networking",
-        //     dependencies: ["Moya", "RxMoya", "Toaster", "CommonError", "Core"]
-        // ),
+        .target(
+            name: "Networking",
+            dependencies: ["Moya", "RxMoya", "Toaster", "CommonError", "Core"]
+        ),
         .target(
             name: "CommonError",
             dependencies: ["Moya", "SwifterSwift"]
