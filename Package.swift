@@ -8,11 +8,11 @@ let package = Package(
         .library(name: "Core", targets: ["Core"])
     ],
     dependencies: [
-    .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0"))
-  ],
+      .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0"))
+    ],
     targets: [
-    .target(name: "Core", dependencies: ["RxSwift", "RxCocoa"])
-  ]
+      .target(name: "Core", dependencies: ["RxSwift", "RxCocoa"])
+    ]
     // dependencies: [
     //     .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
     //     .package(url: "https://github.com/RxSwiftCommunity/RxSwiftExt.git", .upToNextMajor(from: "6.1.0")),
@@ -24,8 +24,8 @@ let package = Package(
     //     .package(url: "https://github.com/SwifterSwift/SwifterSwift.git", .upToNextMajor(from: "5.0.0"))
     // ],
     // targets: [
-    //     .target(
-    //         name: "Core", 
-    //         dependencies: ["RxSwift", "RxCocoa", "RxSwiftExt", "RxDataSources", "NSObject-Rx", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift"])
+    //   .target(
+    //     name: "Core", 
+    //     dependencies: ["RxSwift", "RxCocoa", "RxSwiftExt", "RxDataSources", "NSObject-Rx", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift"])
     // ]
 )
