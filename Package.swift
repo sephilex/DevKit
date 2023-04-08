@@ -19,7 +19,7 @@ let package = Package(
         .package(url: "https://github.com/devxoul/Then.git", .upToNextMajor(from: "3.0.0")),
         .package(url: "https://github.com/SwifterSwift/SwifterSwift.git", .upToNextMajor(from: "5.0.0")),
         .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "15.0.0")),
-        .package(url: "https://github.com/devxoul/Toaster.git", .upToNextMajor(from: "2.3.0"))
+        .package(url: "https://github.com/devxoul/Toaster.git", .branch("master"))
     ],
     targets: [
         .target(
