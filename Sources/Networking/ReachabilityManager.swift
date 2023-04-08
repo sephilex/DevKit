@@ -8,6 +8,7 @@
 import RxSwift
 import Alamofire
 import Toaster
+import Core
 
 // An observable that completes when the app gets online (possibly completes immediately).
 public func connectedToInternet() -> Observable<Bool> {
