@@ -19,7 +19,6 @@ let package = Package(
         .package(url: "https://github.com/devxoul/Then.git", .upToNextMajor(from: "3.0.0")),
         .package(url: "https://github.com/SwifterSwift/SwifterSwift.git", .upToNextMajor(from: "5.0.0")),
         .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "15.0.0")),
-        .package(name:"RxMoya", url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "15.0.0")),
         .package(url: "https://github.com/devxoul/Toaster.git", .branch("master"))
     ],
     targets: [
@@ -29,7 +28,11 @@ let package = Package(
         ),
         .target(
             name: "Networking",
-            dependencies: ["Moya", "RxMoya", "Toaster", "CommonError", "Core"]
+            dependencies: [
+            "Moya", 
+            .product(name: "RxMoya", package: "Moya"), 
+            "Toaster", "CommonError", "Core"
+            ]
         ),
         .target(
             name: "CommonError",
