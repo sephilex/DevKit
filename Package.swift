@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "DevKit",
-    platforms: [ .iOS(.v9)],
+    platforms: [ .iOS(.v14)],
     products: [
         .library(name: "Core", targets: ["Core"])
     ],
