@@ -5,6 +5,7 @@ let package = Package(
     name: "DevKit",
     platforms: [ .iOS(.v14)],
     products: [
+      .library(name: "DevKit", targets: ["DevKit"]),
       .library(name: "Core", targets: ["Core"]),
       .library(name: "CommonError", targets: ["CommonError"]),
       .library(name: "Networking", targets: ["Networking"])
@@ -22,6 +23,10 @@ let package = Package(
         .package(url: "https://github.com/devxoul/Toaster.git", .branch("master"))
     ],
     targets: [
+        .target(
+            name: "DevKit", 
+            dependencies: ["Core", "CommonError", "Networking"]
+        ),
         .target(
             name: "Core", 
             dependencies: [
