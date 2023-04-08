@@ -6,7 +6,7 @@
 //  Copyright © 2016 Khoren Markosyan. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 import RxCocoa
 
