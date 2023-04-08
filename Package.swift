@@ -13,7 +13,7 @@ let package = Package(
     .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0"))
   ],
   targets: [
-    .target(name: "Core", dependencies: ["Differentiator", "RxSwift", "RxCocoa"])
+    .target(name: "Core", dependencies: ["RxSwift", "RxCocoa"])
   ]
     // dependencies: [
     //     .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
