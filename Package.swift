@@ -20,7 +20,8 @@ let package = Package(
     targets: [
         .target(
             name: "Core", 
-            dependencies: ["RxSwift", "NSObject-Rx", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift", "RxDataSources", "RxSwiftExt"]),
+            dependencies: ["RxSwift", "NSObject-Rx", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift", "RxDataSources", "RxSwiftExt"]
+        ),
         // .target(
         //     name: "Networking",
         //     dependencies: ["Moya", "RxMoya", "Toaster", "CommonError", "Core"]
