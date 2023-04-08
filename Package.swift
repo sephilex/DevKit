@@ -5,15 +5,13 @@ let package = Package(
     name: "DevKit",
     platforms: [ .iOS(.v9)],
     products: [
-        .library(
-            name: "Core",
-            targets: ["Core"]),
+        .library(name: "Core", targets: ["Core"])
     ],
     dependencies: [
     .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0"))
   ],
   targets: [
-    .target(name: "Core", dependencies: ["RxSwift"])
+    .target(name: "Core", dependencies: ["RxSwift", "RxCocoa"])
   ]
     // dependencies: [
     //     .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
