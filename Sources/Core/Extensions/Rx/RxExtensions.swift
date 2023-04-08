@@ -5,7 +5,7 @@
 //  Created by sephilex on 2021/5/8.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 import RxCocoa
 
