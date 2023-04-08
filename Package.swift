@@ -24,14 +24,16 @@ let package = Package(
     targets: [
         .target(
             name: "Core", 
-            dependencies: ["RxSwift", "NSObject-Rx", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift", "RxDataSources", "RxSwiftExt"]
+            dependencies: [
+              .product(name: "RxCocoa", package: "RxSwift"),
+              "RxSwift", "NSObject-Rx", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift", "RxDataSources", "RxSwiftExt"
+            ]
         ),
         .target(
             name: "Networking",
             dependencies: [
-            "Moya", 
-            .product(name: "RxMoya", package: "Moya"), 
-            "Toaster", "CommonError", "Core"
+              .product(name: "RxMoya", package: "Moya"), 
+              "Moya", "Toaster", "CommonError", "Core"
             ]
         ),
         .target(
