@@ -4,7 +4,10 @@ import PackageDescription
 let package = Package(
     name: "DevKit",
     platforms: [ .iOS(.v14)],
-    products: [.library(name: "Core", targets: ["Core"])],
+    products: [
+      .library(name: "Core", targets: ["Core"]),
+      .library(name: "CommonError", targets: ["CommonError"])
+    ],
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
         .package(url: "https://github.com/RxSwiftCommunity/RxSwiftExt.git", .upToNextMajor(from: "6.1.0")),
