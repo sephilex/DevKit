@@ -13,11 +13,21 @@ let package = Package(
         .package(url: "https://github.com/onevcat/Kingfisher.git", .upToNextMajor(from: "7.0.0")),
         .package(url: "https://github.com/roberthein/TinyConstraints.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/devxoul/Then.git", .upToNextMajor(from: "3.0.0")),
-        .package(url: "https://github.com/SwifterSwift/SwifterSwift.git", .upToNextMajor(from: "5.0.0"))
+        .package(url: "https://github.com/SwifterSwift/SwifterSwift.git", .upToNextMajor(from: "5.0.0")),
+        .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "15.0.0")),
+        .package(url: "https://github.com/devxoul/Toaster.git", from: "master")
     ],
     targets: [
         .target(
             name: "Core", 
-            dependencies: ["RxSwift", "RxCocoa", "NSObject-Rx", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift", "RxDataSources", "RxSwiftExt"])
+            dependencies: ["RxSwift", "NSObject-Rx", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift", "RxDataSources", "RxSwiftExt"]),
+        .target(
+            name: "Networking",
+            dependencies: ["Moya", "RxMoya", "Toaster", "CommonError", "Core"]
+        ),
+        .target(
+            name: "CommonError",
+            dependencies: ["Moya", "SwifterSwift"]
+        )
     ]
 )
