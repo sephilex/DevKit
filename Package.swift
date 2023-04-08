@@ -16,11 +16,12 @@ let package = Package(
         .package(url: "https://github.com/RxSwiftCommunity/RxDataSources.git", .upToNextMajor(from: "5.0.0")),
         .package(url: "https://github.com/onevcat/Kingfisher.git", .upToNextMajor(from: "7.0.0")),
         .package(url: "https://github.com/roberthein/TinyConstraints.git", .upToNextMajor(from: "4.0.0")),
-        .package(url: "https://github.com/devxoul/Then.git", .upToNextMajor(from: "3.0.0"))
+        .package(url: "https://github.com/devxoul/Then.git", .upToNextMajor(from: "3.0.0")),
+        .package(url: "https://github.com/SwifterSwift/SwifterSwift.git", .upToNextMajor(from: "5.0.0"))
     ],
     targets: [
         .target(
             name: "Core", 
-            dependencies: ["RxSwift", "RxSwiftExt", "NSObject-Rx", "RxDataSources", "Kingfisher", "TinyConstraints", "Then"])
+            dependencies: ["RxSwift", "RxSwiftExt", "NSObject-Rx", "RxDataSources", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift"])
     ]
 )
