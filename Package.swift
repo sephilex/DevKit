@@ -28,7 +28,7 @@ let package = Package(
         ),
         .target(
             name: "Networking",
-            dependencies: ["Moya", "RxMoya", "Toaster", "CommonError", "Core"]
+            dependencies: ["RxMoya", "Toaster", "CommonError", "Core"]
         ),
         .target(
             name: "CommonError",
