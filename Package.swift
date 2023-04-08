@@ -21,6 +21,7 @@ let package = Package(
     targets: [
         .target(
             name: "Core", 
+            path: "Sources/DevKit/Core",
             dependencies: ["RxSwift", "RxSwiftExt", "NSObject-Rx", "RxDataSources", "Kingfisher", "TinyConstraints", "Then"])
     ]
 )
