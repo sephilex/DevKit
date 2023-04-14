@@ -30,7 +30,7 @@ let package = Package(
               .product(name: "RxCocoa", package: "RxSwift"),
               "RxSwift", "NSObject-Rx", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift", "RxDataSources", "RxSwiftExt",
               .product(name: "RxMoya", package: "Moya"), 
-              "Moya", "Toaster", "CommonError", "Core", "Moya", "SwifterSwift"
+              "Moya", "Toaster", "Core"
             ]
             // dependencies: ["Core", "CommonError", "Networking"]
         ),
