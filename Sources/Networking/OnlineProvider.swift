@@ -8,7 +8,7 @@
 import Foundation
 import Moya
 import RxSwift
-import RxMoya
+// import RxMoya
 
 public class OnlineProvider<Target> where Target: Moya.TargetType {
     private let online: Observable<Bool>
