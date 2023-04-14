@@ -28,11 +28,10 @@ let package = Package(
             path: "Sources",
             dependencies: [
               .product(name: "RxCocoa", package: "RxSwift"),
-              "RxSwift", "NSObject-Rx", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift", "RxDataSources", "RxSwiftExt",
               .product(name: "RxMoya", package: "Moya"), 
-              "Moya", "Toaster", "Core"
+              "RxSwift", "NSObject-Rx", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift", "RxDataSources", "RxSwiftExt",
+              "Moya", "Toaster"
             ]
-            // dependencies: ["Core", "CommonError", "Networking"]
         ),
         .target(
             name: "Core", 
