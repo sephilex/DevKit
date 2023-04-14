@@ -24,15 +24,6 @@ Pod::Spec.new do |s|
     ss.dependency 'SwifterSwift'
   end
 
-  s.subspec 'Networking' do |ss|
-    ss.source_files   = "Sources/Networking/**/*.{swift}"
-    ss.dependency 'Moya'
-    ss.dependency 'Moya/RxSwift'
-    ss.dependency 'Toaster'
-    ss.dependency 'DevKit/CommonError'
-    ss.dependency 'DevKit/Core'
-  end
-
   s.subspec 'Core' do |ss|
     ss.source_files   = "Sources/Core/**/*.{swift}"
     ss.dependency 'RxSwift'
@@ -45,26 +36,16 @@ Pod::Spec.new do |s|
     ss.dependency 'Then'
   end
 
-  s.subspec 'Full' do |ss|
-    # ss.source_files = "Sources/**/*.{swift}"
-    # ss.dependency 'RxSwift'
-    # ss.dependency 'RxCocoa'
-    # ss.dependency 'RxSwiftExt'
-    # ss.dependency 'NSObject+Rx'
-    # ss.dependency 'RxDataSources'
-    # ss.dependency 'Kingfisher', '~> 7.0'
-    # ss.dependency 'TinyConstraints'
-    # ss.dependency 'Then'
-    # ss.dependency 'Moya'
-    # ss.dependency 'Moya/RxSwift'
-    # ss.dependency 'Toaster'
-    # ss.dependency 'SwifterSwift'
+  s.subspec 'Networking' do |ss|
+    ss.source_files   = "Sources/Networking/**/*.{swift}"
+    ss.dependency 'Moya'
+    ss.dependency 'Moya/RxSwift'
+    ss.dependency 'Toaster'
     ss.dependency 'DevKit/CommonError'
-    ss.dependency 'DevKit/Networking'
     ss.dependency 'DevKit/Core'
   end
 
-  s.subspec 'Debug' do |ss|
+  s.subspec 'Full' do |ss|
     ss.dependency 'DevKit/CommonError'
     ss.dependency 'DevKit/Networking'
     ss.dependency 'DevKit/Core'
