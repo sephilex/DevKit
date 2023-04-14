@@ -19,17 +19,13 @@ Pod::Spec.new do |s|
   # s.source_files = 'DevKit/Classes/**/*'
 
   s.subspec 'CommonError' do |ss|
-    ss.source_files   = "Sources/DevKit/CommonError/**/*.{swift}"
+    ss.source_files   = "Sources/CommonError/**/*.{swift}"
     ss.dependency 'Moya'
     ss.dependency 'SwifterSwift'
   end
 
-  s.subspec 'TestPod' do |ss|
-    ss.source_files   = "Sources/DevKit/TestPod/**/*.{swift}"
-  end
-
   s.subspec 'Networking' do |ss|
-    ss.source_files   = "Sources/DevKit/Networking/**/*.{swift}"
+    ss.source_files   = "Sources/Networking/**/*.{swift}"
     ss.dependency 'Moya'
     ss.dependency 'Moya/RxSwift'
     ss.dependency 'Toaster'
@@ -38,7 +34,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Core' do |ss|
-    ss.source_files   = "Sources/DevKit/Core/**/*.{swift}"
+    ss.source_files   = "Sources/Core/**/*.{swift}"
     ss.dependency 'RxSwift'
     ss.dependency 'RxCocoa'
     ss.dependency 'RxSwiftExt'
@@ -50,29 +46,28 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Full' do |ss|
-    ss.source_files = "Sources/**/*.{swift}"
-    ss.dependency 'RxSwift'
-    ss.dependency 'RxCocoa'
-    ss.dependency 'RxSwiftExt'
-    ss.dependency 'NSObject+Rx'
-    ss.dependency 'RxDataSources'
-    ss.dependency 'Kingfisher', '~> 7.0'
-    ss.dependency 'TinyConstraints'
-    ss.dependency 'Then'
-    ss.dependency 'Moya'
-    ss.dependency 'Moya/RxSwift'
-    ss.dependency 'Toaster'
-    ss.dependency 'SwifterSwift'
-    # ss.dependency 'DevKit/CommonError'
-    # ss.dependency 'DevKit/Networking'
-    # ss.dependency 'DevKit/Core'
+    # ss.source_files = "Sources/**/*.{swift}"
+    # ss.dependency 'RxSwift'
+    # ss.dependency 'RxCocoa'
+    # ss.dependency 'RxSwiftExt'
+    # ss.dependency 'NSObject+Rx'
+    # ss.dependency 'RxDataSources'
+    # ss.dependency 'Kingfisher', '~> 7.0'
+    # ss.dependency 'TinyConstraints'
+    # ss.dependency 'Then'
+    # ss.dependency 'Moya'
+    # ss.dependency 'Moya/RxSwift'
+    # ss.dependency 'Toaster'
+    # ss.dependency 'SwifterSwift'
+    ss.dependency 'DevKit/CommonError'
+    ss.dependency 'DevKit/Networking'
+    ss.dependency 'DevKit/Core'
   end
 
   s.subspec 'Debug' do |ss|
     ss.dependency 'DevKit/CommonError'
     ss.dependency 'DevKit/Networking'
     ss.dependency 'DevKit/Core'
-    ss.dependency 'DevKit/TestPod'
   end
   
   # s.resource_bundles = {
