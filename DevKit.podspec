@@ -50,9 +50,22 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Full' do |ss|
-    ss.dependency 'DevKit/CommonError'
-    ss.dependency 'DevKit/Networking'
-    ss.dependency 'DevKit/Core'
+    ss.source_files = "Sources/**/*.{swift}"
+    ss.dependency 'RxSwift'
+    ss.dependency 'RxCocoa'
+    ss.dependency 'RxSwiftExt'
+    ss.dependency 'NSObject+Rx'
+    ss.dependency 'RxDataSources'
+    ss.dependency 'Kingfisher', '~> 7.0'
+    ss.dependency 'TinyConstraints'
+    ss.dependency 'Then'
+    ss.dependency 'Moya'
+    ss.dependency 'Moya/RxSwift'
+    ss.dependency 'Toaster'
+    ss.dependency 'SwifterSwift'
+    # ss.dependency 'DevKit/CommonError'
+    # ss.dependency 'DevKit/Networking'
+    # ss.dependency 'DevKit/Core'
   end
 
   s.subspec 'Debug' do |ss|
