@@ -25,13 +25,7 @@ let package = Package(
     targets: [
         .target(
             name: "DevKit", 
-            path: "Sources",
-            dependencies: [
-              .product(name: "RxCocoa", package: "RxSwift"),
-              .product(name: "RxMoya", package: "Moya"), 
-              "RxSwift", "NSObject-Rx", "Kingfisher", "TinyConstraints", "Then", "SwifterSwift", "RxDataSources", "RxSwiftExt",
-              "Moya", "Toaster"
-            ]
+            path: "Sources"
         ),
         .target(
             name: "Core", 
