@@ -25,7 +25,7 @@ let package = Package(
     targets: [
         .target(
             name: "DevKit", 
-            path: "Sources"
+            dependencies: ["CommonError", "Core", "Networking"]
         ),
         .target(
             name: "Core", 
